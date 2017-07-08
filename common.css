@@ -1,0 +1,19 @@
+li{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 1%;
+    color: black;
+    font-family: helvetica;
+    font-size: 20px;
+
+}
+ul{
+    margin: 0 auto;
+    text-align: center;
+}
+body{
+    margin: 0;
+}
+div{
+    float: left;
+}
