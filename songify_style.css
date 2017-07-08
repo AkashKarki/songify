@@ -8,7 +8,7 @@ li{
 }
 ul{
     padding: 1%;
-    background:rgba(0,0,0, 1);
+    background:black;
     margin-bottom: -10px; 
 }
 .list{
@@ -18,7 +18,7 @@ ul{
 body{
     margin: 0;
 }
-header{
+.head{
     position: absolute;
     margin-top: -18px;
     background-image:url("cover.jpg"); 
@@ -33,22 +33,46 @@ h1{
     text-align: center;
     font-size: 37px;
 }
-
-/*.song2{
-    height: 300px;
-    width: 200px;
+.genre{
+    margin-top: 7%;
+}
+.genre1{
+    background-image:url("g1.jpg"); 
+    margin-top: 400px;
+    height: 28%;
+    width: 19%;
+    background-color: green;
+    float: left;
+    margin-left: 6%;
+    background-size: cover;
+}
+.genre2{
+    background-image:url("g2.jpg");
+    background-size: cover;
+    margin-top: 400px;
+    height: 28%;
+    width: 19%;
     background-color: red;
     float: left;
+    margin-left: 4%;
 }
-.song3{
-    height: 300px;
-    width: 200px;
+.genre3{
+    background-image:url("g3.jpg");
+    background-size: cover;
+    margin-top: 400px;
+    height: 28%;
+    width: 19%;
     background-color: pink;
     float: left;
+    margin-left: 4%;
 }
-.song4{
-    height: 300px;
-    width: 200px;
+.genre4{
+    background-image:url("g4.jpg");
+    background-size: cover;
+    margin-top: 400px;
+    height: 28%;
+    width: 19%;
     background-color: blue;
     float: left;
-}*/
+    margin-left: 4%;
+}

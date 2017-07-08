@@ -1,7 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="songify_style.css">
-    </head>
+</head>
     <body>
         <ul>
             <img src="logo.png" height="55" width="55" style="margin-bottom:-15px;">
@@ -12,8 +12,35 @@
             <li>Sign up</li>
             </div>
         </ul>
-        <header>
+        <div class="head">
             <h1><b>Instant access to millions of songs</b></h1>
-        </header>
+        </div>
+        <div class="genre">
+        <div class="genre1">
+        </div>
+        <div class="genre2">
+        </div>
+        <div class="genre3">
+        </div>
+        <div class="genre4">
+        </div>
+    </div>
+    <script src="jquery-2.2.0.js"></script>
+    <script>
+    $('.genre1').on('click',function(){
+        location.href = 'rock.html';
+    })
+    $('.genre2').on('click',function(){
+        location.href = 'bollywood.html';
+    })
+    $('.genre3').on('click',function(){
+        location.href = 'edm.html';
+    })
+    $('.genre4').on('click',function(){
+        location.href = 'rap.html';
+    })
+
+    </script>
+
     </body>
 </html>
