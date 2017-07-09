@@ -13,7 +13,29 @@ ul{
 }
 body{
     margin: 0;
+    width: 600px;
+    margin: 0 auto ;
 }
 div{
     float: left;
+}
+.song_list{
+    padding: 12%;
+    font-size: 16px;
+
+}
+.play_icon
+{
+
+    padding: 55%;
+}
+article{
+    margin-top:30%; 
+    margin-left: 16%;
+}
+.icon{
+    margin-left: 15%;
+}
+.song_name{
+    margin-left: 15%;
 }

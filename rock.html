@@ -1,23 +1,55 @@
+<!DOCTYPE html>
 <html>
-<body>
-    <head>
+<head>
     <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.css">
     <link rel="stylesheet" href="common.css">
     </head>
-    <div class="song_list">
-    <ul>
-        <li>song1<li>
-            <li>song2<li>
-                <li>song3<li>
+<body>
+    <audio class="player">
+        <source src="" type="audio/mp3" />
+    </audio>
+<article>
+    <div class="cover">
+        <li><img src="Fade-To-Blackc.jpg" height="60" width="60"></li>
+        <li><img src="master of  puppetsc.jpg" height="60" width="60"></li>
+        <li><img src="whiskey in the jar .jpg" height="60" width="60"></li>
+    </div>
+    <div >
+    <ul class="song_name">
+        <li class="song_list">Fade_To_Black<li>
+            <li class="song_list">master_of_puppets<li>
+                <li class="song_list">Whiskey_In_The_Jar<li>
     </ul>
 </div>
-<div class="play_icon">
+<div class="icon" >
     <ul>
-        <li><i class="fa fa-play song1"></i><li>
-            <li><i class="fa fa-play song2"></i><li>
-                <li><i class="fa fa-play song3"></i><li>
+        <li class="play_icon"><i class="fa fa-play song1"></i><li>
+            <li class="play_icon"><i class="fa fa-play song2"></i><li>
+                <li class="play_icon"><i class="fa fa-play song3"></i><li>
 
     </ul>
 </div>
+</article>
+<script src="jquery-2.2.0.js"></script>
+<script>
+$('.song1').on('click',function(){
+    var x=$(".player");
+    $("source").attr("src", "Fade_To_Black-.mp3");
+    x[0].load();
+    x[0].play();
+})
+$('.song2').on('click',function(){
+    var x=$(".player");
+    $("source").attr("src", "master of  puppets.mp3");
+    x[0].load();
+    x[0].play();
+})
+$('.song3').on('click',function(){
+    var x=$(".player");
+    $("source").attr("src", "Whiskey_In_The_Jar.mp3");
+    x[0].load();
+    x[0].play();
+})
+</script>
 </body>
 </html>
