@@ -5,51 +5,102 @@
     <link rel="stylesheet" href="common.css">
     </head>
 <body>
-    <audio class="player">
+    <audio class="player" controls>
         <source src="" type="audio/mp3" />
     </audio>
-<article>
+<header>
     <div class="cover">
-        <li><img src="Fade-To-Blackc.jpg" height="60" width="60"></li>
-        <li><img src="master of  puppetsc.jpg" height="60" width="60"></li>
-        <li><img src="whiskey in the jar .jpg" height="60" width="60"></li>
+        <li><img src="Fade-To-Blackc.jpg" height="90" width="90" onclick='SongPlay(0)'><p class="song1" ></p></li>
+        
+        <li><img src="master of  puppetsc.jpg" height="90" width="90" onclick='SongPlay(1)'><p class="song2" ></p></li>
+        
+        <li><img src="whiskey in the jar .jpg" height="90" width="90" onclick='SongPlay(2)'><p class="song3" ></p></li>
     </div>
-    <div >
-    <ul class="song_name">
-        <li class="song_list">Fade_To_Black<li>
-            <li class="song_list">master_of_puppets<li>
-                <li class="song_list">Whiskey_In_The_Jar<li>
-    </ul>
-</div>
-<div class="icon" >
-    <ul>
-        <li class="play_icon"><i class="fa fa-play song1"></i><li>
-            <li class="play_icon"><i class="fa fa-play song2"></i><li>
-                <li class="play_icon"><i class="fa fa-play song3"></i><li>
-
-    </ul>
-</div>
-</article>
+</header>
+<footer>
+    <img src="" id="cover2" style='height:98%;width:8%;border-radius:6%;'>
+    <i class="fa fa-backward"></i>
+    <i class="fa fa-play"></i>
+    <i class="fa fa-forward"></i>
+    </footer>
 <script src="jquery-2.2.0.js"></script>
 <script>
-$('.song1').on('click',function(){
+    var songs_list=['Fade_To_Black','master_of_puppets','Whiskey_In_The_Jar'];
+    window.onload=function(){
+    $('.song1').text(songs_list[0]);
+    $('.song2').text(songs_list[1]);
+    $('.song3').text(songs_list[2]);
+    }
+
+var song_no=-1;
+var status=0; 
+var current_time=[];
+var j;
+$('.fa-play').on('click',function(){
+    $(".fa-play").toggleClass("fa-pause");
+    SongPlay(0);
+})
+function SongPlay(i)
+{
+    if (song_no==-1){
     var x=$(".player");
-    $("source").attr("src", "Fade_To_Black-.mp3");
+    $("source").attr("src", songs_list[i].concat('.mp3'));
+    if (i==0){
+        var img="Fade-To-Blackc.jpg";
+    }
+    else if(i==1)
+    {
+        var img="master of  puppetsc.jpg";
+    }
+    else if (i==2)
+    {
+        var img="whiskey in the jar .jpg";
+    }
+    document.getElementById("cover2").src=img;
     x[0].load();
     x[0].play();
-})
-$('.song2').on('click',function(){
+    $(".fa-play").toggleClass("fa-pause");
+    song_no=i;
+    status=1;
+    }
+   else if (i==song_no)
+   {
+    if(status==1)
+    {
+        var x=$(".player");
+        x[0].pause();
+        $(".fa-play").toggleClass("fa-pause");
+        status=0;
+    }
+    else{
+        var x=$(".player");
+        x[0].play();
+        $(".fa-play").toggleClass("fa-pause");
+        status=1;
+    }
+}
+    else{
     var x=$(".player");
-    $("source").attr("src", "master of  puppets.mp3");
+    $("source").attr("src", songs_list[i].concat('.mp3'));
+    if (i==0){
+        var img="Fade-To-Blackc.jpg";
+    }
+    else if(i==1)
+    {
+        var img="master of  puppetsc.jpg";
+    }
+    else if (i==2)
+    {
+        var img="whiskey in the jar .jpg";
+    }
+    document.getElementById("cover2").src=img;
     x[0].load();
     x[0].play();
-})
-$('.song3').on('click',function(){
-    var x=$(".player");
-    $("source").attr("src", "Whiskey_In_The_Jar.mp3");
-    x[0].load();
-    x[0].play();
-})
+    $(".fa-play").toggleClass("fa-pause");
+    song_no=i;
+    status=1;
+    }
+   }
 </script>
 </body>
 </html>
