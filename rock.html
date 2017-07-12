@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.css">
     <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
     </head>
     <body>
          <ul>
@@ -13,7 +14,8 @@
             <li>Sign up</li>
             </div>
         </ul>
-        <table >
+        <table id="songs">
+            <thead>
         <tr>
             <td>album Art</td>
             <td>song</td>
@@ -21,6 +23,8 @@
             <td>album</td>
             <td>duration</td>
         </tr>
+    </thead>
+    <tbody>
         <tr id="song1" onclick='songPlay(0)'>
             <td><img src="" class ="song_image" hight="90px" width="90px"></td>
             <td class="song_name"></td>
@@ -42,6 +46,7 @@
             <td class="song_album"></td>
             <td class="song_duration"></td>
         </tr>
+    </tbody>
     </table>
     <audio id="player">
         <source src="Fade_To_Black.mp3" type="audio/mp3"/>
@@ -53,6 +58,7 @@
     <i class="fa fa-forward"></i>
     </footer>
     <script src="jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
     var i=0;
     var song_image=['Fade-To-Blackc.jpg','master of  puppetsc.jpg','whiskey in the jar .jpg']
@@ -70,6 +76,11 @@
         $(name).find('.song_album').text(SongAlbum[i]);
         $(name).find('.song_duration').text(SongDuration[i])
     }
+    $('#songs').DataTable({
+        
+        });
+
+    $('.icon').on('click',play_pause);
     function play_pause()
     {
         var song=$('audio');
@@ -88,6 +99,11 @@
                 console.log("changed pause");
             }
     }
+     $('body').on('keypress', function(event) {
+                if (event.keyCode == 32) {
+                    play_pause();
+                }
+            });
     function songPlay(id){
         var song=$('audio');
         var current_song = $('audio').attr('src');
@@ -106,6 +122,7 @@
             play_pause();
         }
 }
+
     </script>
     </body>
     </html>

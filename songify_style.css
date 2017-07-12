@@ -34,7 +34,11 @@ h1{
 }
 .genre{
     margin-top: 7%;
+    hover{color: #00b200;
+        cursor:pointer;}
 }
+.genre:hover{color: #00b200;
+        cursor:pointer;}
 .genre1{
     background-image:url("g1.jpg"); 
     margin-top: 400px;
@@ -43,6 +47,7 @@ h1{
     float: left;
     margin-left: 6%;
     background-size: cover;
+    border-radius: 12px;
 }
 .genre2{
     background-image:url("g2.jpg");
@@ -52,6 +57,7 @@ h1{
     width: 19%;
     float: left;
     margin-left: 4%;
+    border-radius: 12px;
 }
 .genre3{
     background-image:url("g3.jpg");
@@ -61,6 +67,7 @@ h1{
     width: 19%;
     float: left;
     margin-left: 4%;
+    border-radius: 12px;
 }
 .genre4{
     background-image:url("g4.jpg");
@@ -70,4 +77,10 @@ h1{
     width: 19%;
     float: left;
     margin-left: 4%;
+    border-radius: 12px;
 }
+
+li:hover{color: #00b200;
+        cursor:pointer;
+    }
+

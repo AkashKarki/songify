@@ -50,7 +50,7 @@ font-size: 35px;
 }*/
 
 td{
-        padding: 40px;
+        padding: 35px;
     }
     li{
     display: inline;
@@ -61,11 +61,12 @@ td{
     font-size: 20px;
 }
 ul{
-    padding: 0.6%;
+    padding: 0.1%;
     background:black; 
 }
 body{
     margin: 0px;
+    width: 99%;
 }
 .list{
     margin-left: 67%;
@@ -99,3 +100,7 @@ font-size: 35px;
     margin-left: 0.8%;
     margin-bottom: 300px;
 }
+tr:hover{ cursor:pointer;
+         text-decoration: underline;}
+li:hover{color: #00b200;
+        cursor:pointer;}
