@@ -14,7 +14,7 @@
                 <li>Sign up</li>
          </ul>
         </div>
-        <p class="user_name" align="right" style='color:black;'></p>
+        <p class="user_name" align="right" style='color:black;margin-right:5px;'></p>
         <table id="songs">
             <thead>
         <tr>
@@ -52,16 +52,50 @@
     <audio id="player">
         <source src="Fade_To_Black.mp3" type="audio/mp3"/>
     </audio>
-    <footer>
+    
+    <div class="foot">
     <img src="" id="cover2" style='height:98%;width:8%;border-radius:6%;'>
+
+    <input type="text" id="foot_name" size="15" style="font-family: helvetica;font-size: 15px;">
+    
+    <input type="text" id="foot_album" size="15" style="font-family: helvetica;font-size: 15px;background-color: Transparent;border: none;">
+
+    <input type="text" id="duration" size="4" maxlength="5" style="font-family: helvetica;font-size: 15px;border-right:solid #000;">
+    
+    <input type="text" id="current_time" size="4" maxlength="6" style="font-family: helvetica;font-size: 15px;">
+    
     <i class="fa fa-backward"></i>
+    
     <i class="fa fa-play-circle icon"></i>
+    
     <i class="fa fa-forward"></i>
-    </footer>
+    </div>
     <script src="jquery-2.2.0.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
-    $('.user_name').text(localStorage.getItem("name"));
+    window.onload = setInterval(function(){ var song = document.querySelector('audio');
+        document.getElementById('duration').value=fancyTimeFormat(song.duration);
+        document.getElementById('current_time').value=fancyTimeFormat(song.currentTime);
+     }, 1000)
+    function fancyTimeFormat(time)
+{   
+    // Hours, minutes and seconds
+    var hrs = ~~(time / 3600);
+    var mins = ~~((time % 3600) / 60);
+    var secs = time % 60;
+
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    var ret = "";
+
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
+}
+    $('.user_name').text(localStorage.getItem("name"));//for geting name of user which was taken as input in songify.html
     var i=0;
     var song_image=['Fade-To-Blackc.jpg','master of  puppetsc.jpg','whiskey in the jar .jpg']
     var SongName=['Fade_To_Black','master_of_puppets','Whiskey_In_The_Jar'];
@@ -69,6 +103,8 @@
     var SongAlbum=['Ride the Lightning','master_of_puppets','wiskey in jar'];
     var SongDuration=['5','6','5.4'];
     document.getElementById("cover2").src=song_image[0];
+    document.getElementById('foot_name').value=SongName[0];
+    document.getElementById('foot_album').value=SongAlbum[0];
     for(i=0;i<3;i++)
     {
         var name='#song'+(i+1);
@@ -81,8 +117,8 @@
     $('#songs').DataTable({
         });
 
-    $('.icon').on('click',play_pause);
-    function play_pause()
+    $('.icon').on('click',addSongNameClickEvent);
+    function addSongNameClickEvent()
     {
         var song=$('audio');
         if (document.getElementById("player").paused==true){
@@ -102,7 +138,7 @@
     }
      $('body').on('keypress', function(event) {
                 if (event.keyCode == 32 && event.target.tagName != "INPUT") {
-                    play_pause();
+                    addSongNameClickEvent();
                 }
             });
     function songPlay(id){
@@ -113,6 +149,8 @@
             $(song).attr('src',request_song)
             song[0].load();
             document.getElementById("cover2").src=song_image[id];
+            document.getElementById('foot_name').value=SongName[id];
+            document.getElementById('foot_album').value=SongAlbum[id];
             song[0].play();
             $(".icon").addClass("fa fa-pause-circle");
             //$(".fa-pause-circle").addClass("iconshow");
@@ -120,7 +158,7 @@
             console.log("changed play");
             }
         else{
-            play_pause();
+            addSongNameClickEvent();
         }
 }
 

@@ -43,13 +43,13 @@
     $('button').on('click', function() {
     var name = $('#name-input').val();
     var message = "Welcome, " + name;
-    if(name.length==0)
+    if(name.length<=3)
     {
         alert("invalid name");
     }
     else{
     $('.user_name').text(message);
-    localStorage.setItem("name", message);
+    localStorage.setItem("name", message);//for storing inforamtion to use in another html
     console.log(message);
     $('.wrapper').addClass('hidden');
     $('.main').removeClass('hidden');
