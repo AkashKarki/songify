@@ -5,11 +5,11 @@
     <body>
         <div class="wrapper">
         <section class="welcome-screen">
-            <h1> Welcome to Songify </h1>
-            <h3 style="color:B0C4DE;"> Enter name to access your account </h3>
+            <h1 style="color:white;"> Welcome to Songify </h1>
+            <h3 style="color:white;font-family: helvetica;"> Enter name to access your account </h3>
             <div class="input-wrapper">
-                <input type="text" placeholder="Name" id="name-input">
-                <button> <b>Start<b> </button>
+                <input class="mainLoginInput" type="text" placeholder="Name" id="name-input" style='height:28px;'><br>
+                <button style='padding:2%;margin-top:4%;'> <b>Start<b> </button>
             </div>
         </div>
         <div class='main'>
@@ -45,15 +45,16 @@
     var message = "Welcome, " + name;
     if(name.length==0)
     {
-        location.href = 'songify.html';
         alert("invalid name");
     }
+    else{
     $('.user_name').text(message);
     localStorage.setItem("name", message);
     console.log(message);
     $('.wrapper').addClass('hidden');
     $('.main').removeClass('hidden');
-});
+    }
+    });
     
     $('.genre1').on('click',function(){
         location.href = 'rock.html';

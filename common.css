@@ -1,54 +1,3 @@
-/*li{
-    text-decoration: none;
-    list-style-type: none;
-    color: black;
-    font-family: helvetica;
-    font-size: 15px;
-    display: inline-block;
-    height: 8%;
-    background-color: lightgrey;
-    width: 9%;
-    border: 10px solid #666666;
-    padding: 25px;
-    margin: 25px;
-    border-radius:10%;  
-
-}
-ul{
-    margin: 0 auto;
-
-}
-body{
-    margin: 0 auto ;
-}
-.playing{
-    text-align: center ;
-
-}
-footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 10%;
-    background-color: brown;
-}
-.fa-play{
-    font-size: 35px;
-    margin-left: 1%;
-    margin-bottom: 300px;
-
-}
-.fa-backward{
-font-size: 35px;
-    margin-left: 36%;
-    margin-bottom: 300px;
-}
-.fa-forward{
-    font-size: 35px;
-    margin-left: 0.8%;
-    margin-bottom: 300px;
-}*/
-
 td{
         padding: 35px;
     }
@@ -104,4 +53,7 @@ tr:hover{ cursor:pointer;
          text-decoration: underline;}
 li:hover{color: #00b200;
         cursor:pointer;}
-i:hover{cursor:pointer;}    
+i:hover{cursor:pointer;}
+body{
+    font-family: helvetica;
+}    
