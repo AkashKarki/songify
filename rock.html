@@ -8,12 +8,13 @@
          <ul>
             <img src="logo.png" height="55" width="55" style="margin-bottom:-15px;">
             <div class="list"> 
-            <li>Premium</li>
-            <li>Help</li>
-            <li>Download</li>
-            <li>Sign up</li>
-            </div>
-        </ul>
+                <li>Premium</li>
+                <li>Help</li>
+                <li>Download</li>
+                <li>Sign up</li>
+         </ul>
+        </div>
+        <p class="user_name" align="right" style='color:black;'></p>
         <table id="songs">
             <thead>
         <tr>
@@ -60,6 +61,7 @@
     <script src="jquery-2.2.0.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
+    $('.user_name').text(localStorage.getItem("name"));
     var i=0;
     var song_image=['Fade-To-Blackc.jpg','master of  puppetsc.jpg','whiskey in the jar .jpg']
     var SongName=['Fade_To_Black','master_of_puppets','Whiskey_In_The_Jar'];
@@ -77,7 +79,6 @@
         $(name).find('.song_duration').text(SongDuration[i])
     }
     $('#songs').DataTable({
-        
         });
 
     $('.icon').on('click',play_pause);
@@ -100,7 +101,7 @@
             }
     }
      $('body').on('keypress', function(event) {
-                if (event.keyCode == 32) {
+                if (event.keyCode == 32 && event.target.tagName != "INPUT") {
                     play_pause();
                 }
             });

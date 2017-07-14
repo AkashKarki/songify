@@ -16,7 +16,7 @@ ul{
     margin-bottom: 20px;
 }
 body{
-    margin: 0;
+    margin: 0; 
 }
 .head{
     position: absolute;
@@ -84,3 +84,34 @@ li:hover{color: #00b200;
         cursor:pointer;
     }
 
+    .wrapper{
+    background-image:url('background.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #BBB; 
+    text-align: center;
+
+}
+.hidden{
+    display: none;
+}
+button {
+
+            background-color: Transparent;
+            border: 5px solid white;
+            width: 70px;
+            color: white;
+            cursor:pointer;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+input{
+    background-color: Transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+}
