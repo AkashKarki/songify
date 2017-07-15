@@ -58,12 +58,11 @@
 
     <input type="text" id="foot_name" size="15" style="font-family: helvetica;font-size: 15px;">
     
-    <input type="text" id="foot_album" size="15" style="font-family: helvetica;font-size: 15px;background-color: Transparent;border: none;">
-
+    <input type="text" id="foot_album" size="15" style="font-family:helvetica;font-size: 15px;background-color: Transparent;border: none;">
     <input type="text" id="duration" size="4" maxlength="5" style="font-family: helvetica;font-size: 15px;border-right:solid #000;">
     
     <input type="text" id="current_time" size="4" maxlength="6" style="font-family: helvetica;font-size: 15px;">
-    
+    <progress id="seekbar" value="0" max="100" style="width:400px;"></progress>
     <i class="fa fa-backward"></i>
     
     <i class="fa fa-play-circle icon"></i>
@@ -73,10 +72,18 @@
     <script src="jquery-2.2.0.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
+    var song = document.querySelector('audio');
     window.onload = setInterval(function(){ var song = document.querySelector('audio');
         document.getElementById('duration').value=fancyTimeFormat(song.duration);
         document.getElementById('current_time').value=fancyTimeFormat(song.currentTime);
      }, 1000)
+    song.addEventListener('timeupdate', onLoadProgress);
+    var myProgressBar = document.getElementById('seekbar'); 
+    function onLoadProgress () {
+    var progress= parseInt(((song.currentTime / song.duration) * 100), 10);
+    console.log(progress);
+    myProgressBar.value = progress; 
+}
     function fancyTimeFormat(time)
 {   
     // Hours, minutes and seconds

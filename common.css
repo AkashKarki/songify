@@ -15,6 +15,7 @@ ul{
 }
 body{
     margin: 0px;
+    font-family: helvetica;
 }
 .list{
     margin-left: 67%;
@@ -52,10 +53,7 @@ tr:hover{ cursor:pointer;
          text-decoration: underline;}
 li:hover{color: #00b200;
         cursor:pointer;}
-i:hover{cursor:pointer;}
-body{
-    font-family: helvetica;
-}    
+i:hover{cursor:pointer;}   
 #duration,#current_time{
     background-color: Transparent;
     padding: 2px;
@@ -65,9 +63,32 @@ body{
     background-color: Transparent;
     border: none;
     position: absolute;
+    margin-top: 19px;
     margin-bottom: 80px;
     margin-right: 500px;
     font-family: helvetica;
     font-size: 15px;
-
 }
+progress{
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 70px;
+    
+    width: 400px;
+    height: 14px;
+    -webkit-appearance: none;
+    border: none;
+}
+progress::-webkit-progress-bar {
+    background: black;
+    border-radius: 50px;
+    padding: 2px;
+    box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+}
+
+progress::-webkit-progress-value {
+    border-radius: 50px;
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+    background: grey;
+}
+
