@@ -41,7 +41,7 @@ body{
 
 .fa-backward{
 font-size: 35px;
-    margin-left: 15%;
+    margin-left: 25%;
     margin-bottom: 300px;
 }
 .fa-forward{
@@ -72,7 +72,7 @@ i:hover{cursor:pointer;}
 progress{
     position: absolute;
     margin-top: 6px;
-    margin-left: 70px;
+    margin-left: 15%;
     
     width: 400px;
     height: 14px;
@@ -91,4 +91,3 @@ progress::-webkit-progress-value {
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
     background: grey;
 }
-
