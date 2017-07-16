@@ -122,3 +122,10 @@ input{
 body{
     font-family: helvetica;
 }
+
+.genre1:hover, .genre2:hover ,.genre3:hover ,.genre4:hover
+{
+    position: relative; 
+    top: -8px; 
+    
+}
