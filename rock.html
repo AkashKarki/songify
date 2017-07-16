@@ -52,14 +52,21 @@
     <audio id="player">
         <source src="Fade_To_Black.mp3" type="audio/mp3"/>
     </audio>
-    
+    <div class="slideshow">
+    <img class="slide w3-animate-fading" src="slide1.jpg" hight="600px" width="600px">
+    <img class="slide w3-animate-fading" src="slide2.jpg" hight="600px" width="600px">
+    <img class="slide w3-animate-fading" src="slide3.jpg" hight="600px" width="600px">
+    <img class="slide w3-animate-fading" src="slide4.jpg" hight="600px" width="600px">
+    <img class="slide w3-animate-fading" src="slide5.jpg" hight="600px" width="600px">
+    <img class="slide w3-animate-fading" src="slide6.jpg" hight="600px" width="600px">
+    </div>
     <div class="foot">
     <img src="" id="cover2" style='height:98%;width:8%;border-radius:6%;'>
 
     <input type="text" id="foot_name" size="15" style="font-family: helvetica;font-size: 15px;">
     
     <input type="text" id="foot_album" size="15" style="font-family:helvetica;font-size: 15px;background-color: Transparent;border: none;">
-    <input type="text" id="duration" size="4" maxlength="5" style="font-family: helvetica;font-size: 15px;position:absolute;margin-top:3px;margin-left:10%;">
+    <input type="text" id="duration" size="4" maxlength="5" style="font-family: helvetica;font-size: 15px;position:absolute;margin-top:4px;margin-left:10%;">
     
     <progress id="seekbar" value="0" max="100" style="width:400px;"></progress>
 
@@ -70,12 +77,28 @@
     
     <i class="fa fa-forward"></i>
 
-    <input type="text" id="current_time" size="4" maxlength="6" style="font-family: helvetica;font-size: 15px;position:absolute;margin-left:135px;margin-top:3px;">
+    <input type="text" id="current_time" size="4" maxlength="6" style="font-family: helvetica;font-size: 15px;position:absolute;margin-left:135px;margin-top:4px;">
 
     </div>
     <script src="jquery-2.2.0.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script>
+    var index = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("slide");
+        for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+        }
+    index++;
+    if (index > x.length) {
+        index = 1;
+    }    
+    x[index-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
     var song = document.querySelector('audio');
     window.onload = setInterval(function(){ var song = document.querySelector('audio');
         document.getElementById('duration').value=fancyTimeFormat(song.duration);

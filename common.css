@@ -21,7 +21,7 @@ body{
     margin-left: 67%;
     margin-bottom: 20px;
 }
-.foot{
+.foot{ 
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -71,16 +71,14 @@ i:hover{cursor:pointer;}
 }
 progress{
     position: absolute;
-    margin-top: 6px;
+    margin-top: 10px;
     margin-left: 15%;
-    
-    width: 400px;
-    height: 14px;
     -webkit-appearance: none;
     border: none;
 }
 progress::-webkit-progress-bar {
     background: black;
+    height: 9px;
     border-radius: 50px;
     padding: 2px;
     box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
@@ -90,4 +88,16 @@ progress::-webkit-progress-value {
     border-radius: 50px;
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
     background: grey;
+}
+.slideshow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+}
+img{
+    border-radius: 10px;
+}
+.fading {
+  animation: fading 10s infinite;
 }
