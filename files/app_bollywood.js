@@ -46,7 +46,8 @@
 }
     $('.user_name').text(localStorage.getItem("name"));//for geting name of user which was taken as input in songify.html
     var i=0;
-    var image_path="images/"
+    var image_path="../images/";
+    var song_path="../songs/";
     var song_image=[image_path+'Jagga-Jasoos.jpg',image_path+'tubelight.jpg',image_path+'Half gf.jpg']
     var SongName=['Ullu Ka Pattha','Radio','Baarish'];
     var SongArtist=['arijit singh','Kamaal Khan','Ash King'];
@@ -96,7 +97,7 @@
         var current_song = $('audio').attr('src');
         var request_song=SongName[id]+'.mp3';
         if(current_song!=request_song){
-            $(song).attr('src',request_song)
+            $(song).attr('src',song_path+request_song)
             song[0].load();
             document.getElementById("cover2").src=song_image[id];//change song image dynamically on footer
             document.getElementById('foot_name').value=SongName[id];//change song name dynamically on footer
