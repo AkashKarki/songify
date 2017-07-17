@@ -96,7 +96,9 @@
         var song=$('audio');
         var current_song = $('audio').attr('src');
         var request_song=SongName[id]+'.mp3';
-        if(current_song!=request_song){
+        var curr_song=String(current_song);
+        curr_song=curr_song.slice(9,curr_song.length);
+        if(curr_song!=request_song){
             $(song).attr('src',song_path+request_song)
             song[0].load();
             document.getElementById("cover2").src=song_image[id]; //change song image dynamically on footer
