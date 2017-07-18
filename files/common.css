@@ -16,6 +16,7 @@ ul{
 body{
     margin: 0px;
     font-family: helvetica;
+    background-color:#323232; 
 }
 .list{
     margin-left: 67%;
@@ -90,14 +91,22 @@ progress::-webkit-progress-value {
     background: grey;
 }
 .slideshow{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
+    background-size: cover;
 }
 img{
     border-radius: 10px;
 }
 .fading {
   animation: fading 10s infinite;
+}
+table{
+    padding: 50px;
+}
+td{
+    padding: 15px;
 }
