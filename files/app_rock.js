@@ -1,4 +1,4 @@
-    var index = 0;
+var index = 0;
     carousel();
 
     function carousel() {       //for showing slide show
@@ -114,4 +114,3 @@
             addSongNameClickEvent();
         }
 }
-
