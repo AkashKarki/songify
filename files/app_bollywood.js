@@ -1,6 +1,8 @@
     var index = 0;
     carousel();
 
+
+
     function carousel() { //for showing slide show
         var i;
         var x = document.getElementsByClassName("slide");
@@ -14,18 +16,25 @@
     x[index-1].style.display = "block";  //showing selected image
     setTimeout(carousel, 9000);    
 }
-    var song = document.querySelector('audio');
+
+
+    var song = document.querySelector('audio');//updating time on footer
     window.onload = setInterval(function(){ var song = document.querySelector('audio');//setting time in footer
         document.getElementById('duration').value=fancyTimeFormat(song.duration);
         document.getElementById('current_time').value=fancyTimeFormat(song.currentTime);
      }, 1000)
+
+
+
     song.addEventListener('timeupdate', onLoadProgress); //for increasing progress bar
     var myProgressBar = document.getElementById('seekbar'); 
     function onLoadProgress () {
     var progress= parseInt(((song.currentTime / song.duration) * 100), 10);
-    console.log(progress);
     myProgressBar.value = progress;  //setting value in progress bar
 }
+
+
+
     function fancyTimeFormat(time)
 {   
     // Hours, minutes and seconds
@@ -45,6 +54,10 @@
     ret=ret.slice(0,4);
     return ret;
 }
+
+
+
+
     $('.user_name').text(localStorage.getItem("name"));//for geting name of user which was taken as input in songify.html
     var i=0;
     var image_path="../images/";
@@ -66,8 +79,13 @@
         $(name).find('.song_album').text(SongAlbum[i]);
         $(name).find('.song_duration').text(SongDuration[i])
     }
+
+
+
     $('#songs').DataTable({ //using table for search
         });
+
+
 
     $('.icon').on('click',addSongNameClickEvent); //function for playing and pausing song and changing play pause icon
     function addSongNameClickEvent()
@@ -88,11 +106,15 @@
                 console.log("changed pause");
             }
     }
+
+
      $('body').on('keypress', function(event) {//function for playing and pausing by keypress
                 if (event.keyCode == 32 && event.target.tagName != "INPUT") {
                     addSongNameClickEvent();
                 }
             });
+
+
     function songPlay(id){ // palying song
         var song=$('audio');
         var current_song = $('audio').attr('src');
