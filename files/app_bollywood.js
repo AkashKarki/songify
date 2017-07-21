@@ -42,6 +42,7 @@
 
     ret += "" + mins + ":" + (secs < 10 ? "0" : "");
     ret += "" + secs;
+    ret=ret.slice(0,4);
     return ret;
 }
     $('.user_name').text(localStorage.getItem("name"));//for geting name of user which was taken as input in songify.html
