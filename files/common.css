@@ -102,8 +102,22 @@ progress::-webkit-progress-value {
 img{
     border-radius: 10px;
 }
-.fading {
+.slide {
   animation: fading 10s infinite;
+}
+
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 table{
     padding: 50px;

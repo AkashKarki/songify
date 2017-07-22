@@ -58,24 +58,41 @@ var index = 0;
 
     $('.user_name').text(localStorage.getItem("name"));//for geting name of user which was taken as input in songify.html
     var i=0;
-    var image_path="../images/"
-    var song_path="../songs/"
-    var song_image=[image_path+'Fade-To-Blackc.jpg',image_path+'master of  puppetsc.jpg',image_path+'whiskey in the jar .jpg']
-    var SongName=['Fade_To_Black','master_of_puppets','Whiskey_In_The_Jar'];
-    var SongArtist=['metallica','metallica','metallica','metallica'];
-    var SongAlbum=['Ride the Lightning','master_of_puppets','wiskey in jar'];
-    var SongDuration=['5','6','5.4'];
-    document.getElementById("cover2").src=song_image[0];
-    document.getElementById('foot_name').value=SongName[0];
-    document.getElementById('foot_album').value=SongAlbum[0];
+    var image_path="../images/";
+    var song_path="../songs/";
+    var Song_Obj=[{
+        'song_image':image_path+'Fade-To-Blackc.jpg',
+        'SongName': 'Fade_To_Black',
+        'SongArtist': 'metallica',
+        'SongAlbum': 'Ride the Lightning',
+        'SongDuration': 5,
+    },
+    {
+        'song_image':image_path+'master of  puppetsc.jpg',
+        'SongName': 'master_of_puppets',
+        'SongArtist': 'metallica',
+        'SongAlbum': 'master_of_puppets',
+        'SongDuration': 8,
+    },
+    {
+        'song_image':image_path+'whiskey in the jar .jpg',
+        'SongName': 'Whiskey_In_The_Jar',
+        'SongArtist': 'metallica',
+        'SongAlbum': 'Whiskey_In_The_Jar',
+        'SongDuration': 6,
+    }];
+    
+    document.getElementById("cover2").src=Song_Obj[0].song_image;
+    document.getElementById('foot_name').value=Song_Obj[0].SongName;
+    document.getElementById('foot_album').value=Song_Obj[0].SongAlbum;
     for(i=0;i<3;i++) //setting value in table first
     {
         var name='#song'+(i+1);
-         $(name).find('.song_image').attr("src", song_image[i]);
-        $(name).find('.song_name').text(SongName[i]);
-        $(name).find('.song_artist').text(SongArtist[i]);
-        $(name).find('.song_album').text(SongAlbum[i]);
-        $(name).find('.song_duration').text(SongDuration[i])
+         $(name).find('.song_image').attr("src", Song_Obj[i].song_image);
+        $(name).find('.song_name').text(Song_Obj[i].SongName);
+        $(name).find('.song_artist').text(Song_Obj[i].SongArtist);
+        $(name).find('.song_album').text(Song_Obj[i].SongAlbum);
+        $(name).find('.song_duration').text(Song_Obj[i].SongDuration);
     }
 
 
@@ -117,15 +134,15 @@ var index = 0;
     function songPlay(id){// palying song
         var song=$('audio');
         var current_song = $('audio').attr('src');
-        var request_song=SongName[id]+'.mp3';
+        var request_song=Song_Obj[id].SongName +'.mp3';
         var curr_song=String(current_song);
         curr_song=curr_song.slice(9,curr_song.length);
         if(curr_song!=request_song){
             $(song).attr('src',song_path+request_song)
             song[0].load();
-            document.getElementById("cover2").src=song_image[id]; //change song image dynamically on footer
-            document.getElementById('foot_name').value=SongName[id];//change song name dynamically on footer
-            document.getElementById('foot_album').value=SongAlbum[id];//change song Artist dynamically on footer
+            document.getElementById("cover2").src=Song_Obj[id].song_image; //change song image dynamically on footer
+            document.getElementById('foot_name').value=Song_Obj[id].SongName;//change song name dynamically on footer
+            document.getElementById('foot_album').value=Song_Obj[id].SongAlbum;//change song Artist dynamically on footer
             song[0].play();
             $(".icon").addClass("fa fa-pause-circle");
             //$(".fa-pause-circle").addClass("iconshow");
