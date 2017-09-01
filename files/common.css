@@ -50,6 +50,7 @@ font-size: 35px;
     margin-left: 0.8%;
     margin-bottom: 300px;
 }
+
 tr:hover{ cursor:pointer;
           background-color: #282828;
          text-decoration: none;}
@@ -120,10 +121,11 @@ img{
   }
 }
 table{
-    padding: 50px;
+    padding: 65px;
+    margin-left: 85%;
 }
 td{
-    padding: 15px;
+    padding: 11px;
 }
 label{
     color: white;
